@@ -40,8 +40,8 @@ def check_params(params) :
                 elif mn > 1 : return '%dM'%(mn)
                 return 'M'
             else :
-                if yr > 1 : return '%dY'%(yr)
-                return 'Y'
+                if yr > 1 : return '%dA'%(yr)
+                return 'A'
         if isinstance(p_dict['elems'], basestring) :
             base_ts = 'D'
         else :
