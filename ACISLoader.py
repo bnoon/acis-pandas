@@ -155,6 +155,10 @@ def ACISLoader(**params) :
         all_data[sid] = df
         all_meta[sid] = meta
     panel = Panel.from_dict(all_data)
-    panel.meta = all_meta
+    # Make a pd.DataFrame for meta
+    # Indexed by first ID in sids. Should uid be used?
+    sids = [k for k in all_meta]
+    panel.meta = DataFrame([all_meta[k] for k in sids], index=sids)
+
     return panel
 
